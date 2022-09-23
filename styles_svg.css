@@ -1,0 +1,92 @@
+.article-container {
+    background:linear-gradient(to top, rgb(15, 59, 155),rgb(84, 148, 190),rgb(15, 59, 155));
+}
+ 
+.header-container {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 691px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-image: url(images/guitar.jpg);
+}
+.header-text {
+    flex: 1 1 10%;
+    align-self: center;
+    font-size: 70px;
+    color: white;
+    font-weight: 500;
+}
+
+/* styles for svg */
+svg{
+    display:block;
+    margin:auto;
+}
+rect{
+    fill:#aaaaff;
+    stroke:#2d0952;
+    stroke-width:4; 
+    opacity:0.8;
+}
+
+line{
+    stroke:#3f007f; 
+    stroke-width:4;
+}
+text{
+    fill:#3f007f; 
+    font-family: 'Mukta', sans-serif;
+    font-size:19px;
+}
+
+#svg_web{
+    fill:#7f00ff;
+}
+#svg_head, #svg_foot{
+    fill:#aa56ff;
+}
+#svg_nav{
+    fill:#d4aaff;
+}
+#txtweb{
+    fill:#ffffff; 
+    font-family: 'Mukta', sans-serif;
+    font-size: 17; 
+    text-anchor:middle; 
+    
+}
+#txtfooter, #txtheader{
+    fill:#3f007f; 
+    font-family: 'Mukta', sans-serif;
+    font-size:20px;
+    font-weight: bold;
+}
+
+/*hover effects*/
+svg rect:hover{
+    fill: rgb(134, 51, 167); 
+    transition:cubic-bezier(0.95, 0.05, 0.795, 0.035);
+}
+
+svg g a:hover rect{
+    fill:#d4a;
+}
+svg g a:hover #svg_web {
+    fill:rgb(68, 173, 221);
+}
+svg g a:hover #svg_nav {
+    fill:rgb(193, 221, 68);
+}
+svg g a:hover text{
+    fill:rgb(68, 221, 119);
+}
+svg g a:hover #txtweb{
+    fill:rgb(221, 117, 68);
+}
+ 
+ 

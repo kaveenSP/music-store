@@ -1,0 +1,412 @@
+.header-container {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 691px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+.search_form {
+    position: absolute;
+    margin-top: 30px;
+    border: 1px solid white; 
+    background-color: white; 
+    width: 50%; 
+    margin-left: 25%; 
+    border-radius: 30px;
+    overflow: hidden;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+input[type="search"] {
+    border:none; 
+    width: 92%;
+    font-size: 17px;
+    font-family: 'Mukta', sans-serif;
+    box-sizing: border-box;
+    padding: 5px 0 5px 25px;
+}
+
+input[type="search"]:focus {
+    outline: none;
+}
+
+.artical-container {
+    display: flex; 
+}
+
+.article1 {
+    background-color: #070c10;
+    top: -10px;
+}
+
+.search_button {
+    border-radius: 50%;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid #6e72fc;
+    float: right;
+}
+
+.subarticle11 {
+    position: relative;
+    top:80px;
+    display: flex;
+    width: 100%;
+    justify-content:center;
+}
+
+.subarticle11 span {
+    background-color: #6e72fc;
+    background-image: linear-gradient(0deg, #6e72fc 0%, #ad1deb 90%);
+    visibility: hidden;
+    opacity: 0;
+    color: white;
+    font-size: 18px;
+    line-height: 25px;
+    width: 200px;
+    height: 220px;
+    margin: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 35px;
+}
+
+.article2 {
+    background-color: #ffffff;
+    display: flex;  
+}
+.album_article {
+    flex: 1 1 50%;
+    height: 800px;
+}
+.artistImage {
+    position: relative;
+    width: 500px;
+    height: 620px;
+    margin-left: calc(50% - 175px);
+}
+
+.albumCover {
+    display: inline-block;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-image: url('Images/album_cover.jpg');
+    background-size: cover ;
+    margin-top: 520px;
+    margin-left: calc(38%);
+    z-index: 3;
+    transition: 1s height ease, 1s width ease, 1s transform ease;
+}
+
+.albumCover:hover {
+    height: 220px;
+    width: 220px;
+    transform: rotate(5deg);
+}
+
+.a_a_image {
+    height: 50px;
+    width: 50px;
+    border: 2px solid #87236E;
+    border-radius: 50% ;
+    padding: 5px;
+}
+
+.button-common2 {
+    display: inline-block;
+    padding: 5px 30px;
+    border: 2px solid #87236E;
+    border-radius: 50px;
+}
+
+.article2 a {
+    display: inline-block;
+    padding: 5px 30px;
+    border: 2px solid #87236E;
+    border-radius: 50px;
+    text-decoration: none;
+    color: black;
+    transition-duration: 0.5s;
+}
+
+.article2 a:hover {
+    color: white;
+    background-color: #87236E;
+}
+
+.article2 a:active {
+    opacity: 0.8;
+}
+
+.css-triangle1 {
+    width: 0;
+	height: 0;
+	border-width: 0 100vw 120px 0px;
+    border-top-width: 0;
+	border-color: transparent transparent #070C10 transparent;
+	border-style: solid;
+	transform: rotate(180deg);
+}
+
+.article3 {
+    width: 74vw;
+    height: 80vh;
+    margin: auto;
+    border-radius: 10px;
+    overflow: hidden; 
+}
+
+.article3Change {
+    width: 38vw; 
+    height: 75vh; 
+    float: left; 
+    position: absolute; 
+    box-sizing: border-box; 
+    padding: 30px; 
+    padding-top: 9vh;
+}
+
+.image_container {
+    width: 400%;
+    height: 80vh;
+    display: flex;
+}
+
+.sliding_images {
+    width: 74vw;
+    height: 80vh;
+}
+
+.sliding {
+    width: 25%;
+    transition-duration: 2s;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.radioBtn_container {
+    width: 74vw; 
+    height: 4vh; 
+    position: absolute; 
+    margin-top: 75.5vh; 
+    display: flex;
+    justify-content: center;
+}
+.mannual-nav {
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    transition-duration: 0.5s;
+    margin: 1.8vh 42px 1.5vh 42px;
+}
+
+.mannual-nav:hover {
+    background-color: white;
+}
+
+
+#image1:checked ~ .first_div{
+    margin-left: 0;
+}
+
+#image2:checked ~ .first_div{
+    margin-left: -25%;
+    
+}
+
+#image3:checked ~ .first_div{
+    margin-left: -50%;
+}
+
+#image4:checked ~ .first_div{
+    margin-left: -75%;
+}
+
+.radioBtn_container div {
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    transition-duration: 0.5s;
+    margin: 1.5vh 40px 1.5vh 40px;
+}
+
+#image1:checked ~ .radioBtn_container .auto-button1{
+    background-color: white;
+}
+
+#image2:checked ~ .radioBtn_container .auto-button2{
+    background-color: white;
+}
+
+#image3:checked ~ .radioBtn_container .auto-button3{
+    background-color: white;
+}
+
+#image4:checked ~ .radioBtn_container .auto-button4{
+    background-color: white;
+}
+
+.logo-icons {
+    flex: 1 1 30%; 
+    height:60px; 
+    justify-content: space-between; 
+    margin: 5px;
+    color:#C8C8C8;
+    font-size: 30px;
+    box-sizing: border-box;
+    padding: 25px 0 5px 0;
+    background-repeat: no-repeat;
+    justify-content: space-around;
+    background-size: 120px;
+}
+
+.article3 a {
+    display: inline-block;
+    padding: 5px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    border: 2px solid white; 
+    color: #c8c8c8;
+    transition-duration: 0.5s;
+}
+
+.article3 a:hover {
+    color: black;
+    background-color: white;
+}
+
+.article3 a:active {
+    color: black;
+    background-color: lightgray;
+    border-color: lightgray;
+}
+
+.article4 {
+    background-color: #FADDFE;
+}
+
+.article4Content, .orbitAnimationContainer{
+    width: 50%;
+    height: 84vh;
+    display: inline-block;
+}
+
+.article4Content {
+    box-sizing: border-box;
+    padding: 7vh 6vw auto auto;
+    padding-top: 6vh;
+    padding-right: 6vw;
+    text-align: right;
+    transform: translateX(-20%);
+    opacity: 0;
+    transition: transform 2s ease, opacity 2s ease;
+}
+
+.article4 #redirect{
+    display: inline-block;
+    padding: 5px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    background-color: #D41D4D; 
+    color: white; 
+    border:2px solid #D41D4D ;
+    transition-duration: 0.5s;
+}
+
+.article4 #redirect:hover {
+    background-color: transparent;
+    color: #D41D4D;
+}
+
+.article4 #redirect:active {
+    opacity: 0.7s;
+}    
+
+.orbitAnimationContainer {
+    position: absolute;
+    right: 4vw;
+}
+  
+#orbit1 {
+    position: absolute;
+    margin-top: 21vh;
+    left: 15vw;
+    width: 20vw;
+    height: 20vw;
+    border: 2px #803333 dashed;
+    border-radius: 100%;
+    animation: spin-right 30s linear infinite;
+}
+  
+.imgIcon1 {
+    position: absolute;
+    display: inline-block;
+    width: 4vw;
+    height: 4vw;
+    left: 20px;
+    top: 5px;
+    background-image: url('Images/play.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: spin-left 30s linear infinite;
+}
+  
+#orbit2 {
+    position: absolute;
+    top: 14vh;
+    left: 11.5vw;
+    width: 27vw;
+    height: 27vw;
+    border: 2px #803333 dashed;
+    border-radius: 100%;
+    animation: spin-right 20s linear infinite;
+}
+  
+.imgIcon2 {
+    top: -4vh;
+    left: 10.5vw;
+    position: absolute;
+    height: 4vw;
+    width: 4vw;
+    background-image: url('Images/quiz.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: spin-left 20s linear infinite;
+}
+  
+#orbit3 {
+    position: absolute;
+    top: 6vh;
+    left: 7.5vw;
+    width: 35vw;
+    height: 35vw;
+    border: 2px #803333 dashed;
+    border-radius: 100%;
+    animation: spin-right 25s linear infinite;
+}
+  
+
+.imgIcon3 {
+    top: 26vh;
+    left: -2vw;
+    position: absolute;
+    height: 5vw;
+    width: 5vw;
+    background-image: url('Images/musical-note.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: spin-left 25s linear infinite;
+}
+  
+

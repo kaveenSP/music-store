@@ -1,0 +1,144 @@
+html{
+    scroll-behavior:smooth;
+}
+
+.header-container {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 691px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-image: url("Images/back.jpg");
+    
+}
+
+.box-bg{
+    justify-content: center;
+    align-items: center;
+} 
+
+.box-bg .box-small{
+    width:40%;
+    float:left;
+    margin-left:30px;
+    margin-right: 40px;
+    padding: 30px;
+    min-width: 10px;
+    object-fit: cover;
+}
+.box-bg .box-small img{
+    height: 500px;
+    
+     
+}
+.text1{
+    color:#fff;
+    font-size: 30px;
+    position:absolute;
+    top:1150px;
+    left:72%;
+    transform: translate(-50%,-50%);
+    text-shadow: 0 0 10px rgb(243, 240, 240);
+}
+.instrument a{
+    text-decoration: none;
+    color: #e67b00;
+} 
+ 
+.instrument a:hover{
+    color: #d7e600;
+}
+ 
+    
+
+/*----------------------------------------------------*/
+.instrument{
+    margin:auto;
+    width:1000px;
+} 
+ .container{
+     width:90%;
+     margin:70px auto 0;
+     display:flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+
+
+ }
+.container .box{
+    position: relative;
+    width: 300px;
+    height:300px;
+    background: rgb(179, 255, 0);
+    margin:10px;
+    box-sizing:border-box;
+    display:inline-block;
+}
+
+.container .box .imgbox{
+    position: relative;
+    overflow: hidden;
+
+}
+.container .box .imgbox img{
+    max-width:100%;
+    transition:transform 2s ;
+}
+.container .box:hover .imgbox img{
+    transform: scale(1.2);
+
+}
+.container .box .details{
+    position:absolute ;
+    top:10px;
+    left:10px;
+    bottom:10px;
+    right:10px;
+    background: rgba(0,0,0,0.8) ;
+    transform:scaleY(0);
+    transition: transform .5s;
+
+}
+.container .box:hover .details{
+    transform:scaleY(1);
+}
+.container .box .details .content{
+    position: absolute;
+    top:50%;
+    transform:translateY(-50%);
+    text-align:center;
+    padding: 15px;
+    color:#fff;
+
+}
+.container .box .details .content h2{
+    margin:0;
+    padding:0;
+    font-size:20px;
+    color:#ff0;
+
+
+}
+.container .box .details .content p{
+    margin:10px 0 0;
+    padding:0;
+   
+}
+ 
+#text{
+    color:#fff;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 300px;
+    text-transform: uppercase;
+    font-family: 'Mukta', sans-serif;
+    font-weight: 700;
+}
+ 
+
+ 
+  

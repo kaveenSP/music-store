@@ -1,0 +1,351 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Mukta', sans-serif;
+    overflow-x: hidden;
+}
+
+.title-text {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.logo-text {
+    font-family: 'The Nautigal'; 
+    font-size: 50px;
+    color: white;
+}
+
+.article-text {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.footer-text {
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.anchor_dec {
+    color: white;
+    text-decoration: none;
+}
+
+.anchor_dec:hover {
+    cursor: pointer;
+}
+
+#signup-modal {
+    display: none;
+    margin-left: calc(50% - 380px);
+    margin-top: calc(50vh - 250px);
+    position: fixed;
+    width: 760px;
+    min-height: 500px;
+    border-radius: 20px; 
+    overflow: hidden;  
+    z-index: 5; 
+}
+
+#signin-modal {
+    display: none;
+    margin-left: calc(50% - 380px);
+    margin-top: calc(50vh - 250px);
+    position: fixed;
+    width: 760px;
+    min-height: 500px;
+    border-radius: 20px; 
+    overflow: hidden; 
+    z-index: 5;    
+}
+
+.signin-buttons {
+    margin: 5px 20px 0 20px;
+    width: 70px;
+    height: 70px;
+    font-size: 30px;
+    color: black;
+    background-color: transparent;
+    border: 2px solid #F2A726;
+}
+
+.modal-subContainer1{
+    flex: 1 1 56%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 0 35px 0 35px ;
+    background-color: #FFE9E2;
+}
+
+.modal-subContainer2 {
+    flex: 1 1 44%; 
+    background-size: cover;
+}
+
+.modalCloseButton {
+    color: white; 
+    background-color: transparent; 
+    border: none; 
+    font-size: 20px; 
+    float: right; 
+    padding: 10px;
+}
+
+.signup-form label {
+    display: block;
+    padding: 15px 0 15px 0;
+}
+
+.signup-form input {
+    width: 350px;
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFF3EF;
+    font-family: 'Mukta', sans-serif;
+    font-size: 16px;
+}
+
+.main-container {
+    background: none;
+    opacity: 1;
+}
+
+.header-text {
+    flex: 1 1 10%;
+    align-self: center;
+    font-size: 70px;
+    color: white;
+    font-weight: 500;
+}
+
+nav {
+    flex: 1 1 10%;
+    text-align: center;
+    width: 100%;
+    height: 55px;
+    overflow: hidden;
+}
+
+nav ul {
+    width: 98%;
+    list-style: none;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+nav ul li {
+    margin: 0 8px 0 8px;
+    text-align: center;
+    float: left;
+    width: 7.9%;
+    font-size: 20px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+nav ul li:hover {
+    box-shadow: inset 0 3px white;
+}
+
+.subnav {
+    position: absolute;
+    opacity: 0;
+    margin-left: 0;
+    padding-left:0;
+    transition: 0.5s ease;
+    visibility: hidden;
+    width: 8%;
+    height:75px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);  
+}
+
+.subnav li {
+    margin: 0 10% 0 10%;
+    box-sizing: border-box;
+    padding: 3px 0;
+    width: 80%;
+    text-align: center;
+    font-size: 17px;
+}
+
+nav ul li:hover ul.subnav {
+    visibility: visible;
+    opacity: 1;
+}
+
+.navButtons {
+    float: right; 
+    background: rgba(0, 0, 0, 0.4); 
+    color: white;
+    border: 2px solid white;
+    border-radius:100%; 
+    font-size: 20px; 
+    padding: 7px 7px; 
+    transition-duration:0.5s ;
+}
+
+.navButtons:hover {
+    background-color: white;
+    color: black;
+    opacity: 0.7;
+}
+
+.foot1 {
+    width: 100%;
+    height: 150px;
+    position: relative;
+}
+
+.footer1-sub {
+    position: relative;
+    width: 750px;
+    height:300px;
+    z-index:2;
+    left: calc(50% - 375px);
+    background-color: #6e72fc;
+    background-image: linear-gradient(315deg, #6e72fc 0%, #ad1deb 74%);
+    text-align: center;
+    box-sizing: border-box;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.foot2 {
+    background-color: #262626;
+}
+
+.footerBar {
+    display: inline-block;
+    width: 100%;
+    height: 8vh;
+    text-align: center;
+    color: #BBBBBB;
+    border-radius: border-box;
+}
+
+.socialIcons {
+    border-radius: 100%;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    box-sizing: border-box;
+    padding-top: 10px ;
+    font-size: 160px;
+    margin: 15px;
+    margin-top: 30px;
+}
+
+.button-common {
+    border-radius: 50px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    font-family: 'Mukta', sans-serif;
+    font-size: 20px;
+    transition-duration:0.5s ;
+}
+
+.button-common:hover {
+    color: #ad1deb;
+    border-color: #7e2ba2;
+    background-color: white;
+}
+
+.footer-nav {
+    display: inline-block;
+    margin: 4vw;
+    margin-top: 30px;
+    font-weight: 300;
+    color: #bbbbbb;
+    text-decoration: none;
+}
+
+.footer-nav:hover {
+    color: white;
+}
+
+.anchorArrow {
+    width: 50px; 
+    height: 50px; 
+    text-align: center; 
+    border: 2px solid white; 
+    border-radius: 100%; 
+    font-size: 20px; 
+    color: white; 
+    box-sizing: border-box; 
+    padding: 14px; 
+    background-image: linear-gradient(315deg, #6e72fc 0%, #ad1deb 74%); 
+    background-clip: text;
+}
+
+/* Animations of Home Page */
+
+.bgOpacityDrop {
+    animation-name: modalAnimation1;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+.modalOpacity {
+    animation-name: modalAnimation2;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+.closingOpacityBg {
+    animation-name: modalAnimation3;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+.closingOpacity {
+    animation-name: modalAnimation4;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes modalAnimation1 {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes modalAnimation2 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        display: flex;
+    }
+}
+@keyframes modalAnimation3 {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes modalAnimation4 {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

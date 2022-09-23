@@ -1,0 +1,59 @@
+.art11Animation1, .art11Animation2, .art11Animation3, .art11Animation4 {
+    transform :translateX(15%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.art11Animation1.active {
+    visibility : visible;
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+.art11Animation2.active {
+    transition-delay: 0.5s;
+    visibility : visible;
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+.art11Animation3.active {
+    transition-delay: 1s;
+    visibility : visible;
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+.art11Animation4.active {
+    transition-delay: 1.5s;
+    visibility : visible;
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+.jsarticle2 {
+    transform :translateX(20%);
+    opacity: 0;
+    transition: transform 2s ease, opacity 2s ease;
+}
+
+.jsarticle2.active {
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+.article4Content.active {
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+@keyframes spin-right {
+    100% {
+      transform: rotate(360deg);
+    }
+}
+
+@keyframes spin-left {
+    100% {
+      transform: rotate(-360deg);
+    }
+}

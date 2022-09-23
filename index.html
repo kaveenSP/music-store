@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <title>Welcome to MusicOverflow</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="music, albums, songs, instruments, piano, guitar, violins, drums">
+        <meta name="description" content="Music Shop">
+        <link rel="shortcut icon" type=image/png href="Images/favicon.png">
+        <link rel="stylesheet" href="stylesMain.css">
+        <link rel="stylesheet" href="stylesAnimation_kaveen.css">
+        <link rel="stylesheet" href="styles_kaveen.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300&family=Mukta+Mahee:wght@200&family=Mukta:wght@300;400&family=Poppins:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=The+Nautigal:wght@700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <!--Sign up Modal-->
+        <div id="signup-modal">
+            <div class="modal-subContainer1">
+                <div class="title-text" style="margin-top: 15px;">Create an Account.</div>
+                <em style="color: grey;">It's Quick and Easy.</em>
+                <form method="post" action="index.html" class="signup-form">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required="required" style="font-family: 'Mukta', sans-serif;">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required="required" minlength="8">
+                    <small style="font-weight: 200;">Password should contain 8 letters minimum.</small>
+                    <br>
+                    <input type="checkbox" onclick="passwordVisible()" style="width: initial; height: initial; display: inline;">
+                    <small style="display: inline;">Show Password</small>
+                    <br>
+                    <br>
+                    <table>
+                        <tr>
+                            <td style="width: 65%;">
+                                Already have an Account ?<br>
+                                <button style="background-color: transparent; color: purple; border: none; font-family: 'Mukta', sans-serif;font-size: 17px;" onclick="openLoginModal()">Log in ></button>
+                            </td>
+                            <td>
+                                <input type="submit" value="Sign Up" style=" width: 120px; height: 60px; background-color: #C02350; color: white;">
+                            </td>
+                        </tr>
+                    </table>
+                </form> 
+            </div>  
+            <div class="modal-subContainer2" style="background-image: url('Images/signup.jpg');">
+            <button onclick="closeSuModal()" class="modalCloseButton">X</button>
+            </div>
+        </div>
+        <!--Sign in Modal-->
+        <div id="signin-modal">
+            <div class="modal-subContainer1" style="background-color: #FEE7BD;">
+                <div class="title-text" style="margin-top: 15px;">Welcome Back</div>
+                <form method="post" action="index.html" class="signup-form">
+                    <label for="email1">Email Address</label>
+                    <input type="email" id="email1" name="email_1" required="required" style="font-family: 'Mukta', sans-serif; background-color: #FEF3E0;">
+                    <label for="password1">Password</label>
+                    <input type="password" id="password1" name="password_1" required="required" minlength="8" style="background-color: #FEF3E0;">
+                    <input type="submit" value="Sign in" style="background-color: #F2A726; margin-top:25px; color: white;">
+                    <div style="margin-top: 10px;">Sign in with,</div>
+                    <button class="signin-buttons fa fa-google"></button>
+                    <button class="signin-buttons fa fa-facebook"></button> 
+                    <button class="signin-buttons fa fa-twitter"></button>
+                </form>
+            </div>
+            <div class="modal-subContainer2" style="background-image: url('Images/signin.jpg');">
+                <button onclick="closeSiModal()" class="modalCloseButton">X</button> 
+            </div>
+        </div>
+        
+        <div class="main-container">
+            <!-- Header Starts here -->
+            <div class="header-container" style="background-image: url('Images/HpHeaderBg.jpg');" id="topOfPage">
+                <!-- Navigation Bar -->
+                <nav>  
+                    <span class="logo-text" style="font-size: 40px; float: left; margin: 5px 3vw 0 3vw;">Music Overflow</span>
+                    <ul>  
+                        <li><a class="anchor_dec">Home</a></li>
+                        <li>Store
+                            <ul class="subnav"> 
+                                <li><a href="shop.html" class="anchor_dec">Albums</a></li>
+                                <li><a href="shop.html" class="anchor_dec">Instruments</a></li>
+                            </ul> 
+                        </li>
+                        <li><a href="queryForm.html" class="anchor_dec">Queries</a></li>
+                        <li><a href="Quiz.html" class="anchor_dec">Quiz</a></li>
+                        <li><a href="svg.html" class="anchor_dec">Sitemap</a></li>
+                        <li><a href="thumbnail.html" class="anchor_dec">Thumbnails</a></li>
+                        <li><a href="AboutUs.html" class="anchor_dec">About Us</a></li>
+                    </ul>
+                    <button class="fa fa-shopping-cart navButtons" style="margin: -3px 5% auto 30px; padding: 10px;" id="openCart"></button>
+                    <button class="navButtons" style="border-radius: 30px;font-size: 17px; padding: 5px 15px; font-family: 'Mukta', sans-serif; margin-top: -5px;" onclick="onJoinclick()"><span>Join Us Now</span></button>        
+                </nav>
+                <div style="flex:1 1 auto; color: white; font-size: 30px; ">WELCOME TO <span class="logo-text">Music Overflow</span>
+                    <div class="header-text">
+                        Music is life itself.
+                    </div>
+                </div>
+            </div>
+            <!-- Article starts here -->
+            <div class="article-container">
+                <div class="article1">
+                    <form class="search_form">
+                        <input type="search">
+                        <button class="search_button fa fa-search"></button>
+                    </form> 
+                        <br>
+                    <div class="subarticle11">
+                        <span class="art11Animation1">
+                            <i class="fa fa-user" style="font-size: 60px;"></i>
+                            <br>
+                            <br>
+                            Over <br> <strong>5000</strong><br> Customers
+                        </span>
+                        <span class="art11Animation2">
+                            All your musical needs fullfilled in one place
+                            <br>
+                            <br>
+                            <i class="fa fa-music" style="font-size: 55px;"></i>
+
+                        </span>
+                        <span class="art11Animation3">
+                            <i class="fa fa-shopping-basket" style="font-size: 55px;"></i>
+                            <br>
+                            <br>
+                            Over 1000 shopping items.
+                        </span>
+                        <span class="art11Animation4">
+                            Free Delivery within 2 Days
+                            <br>
+                            <br>
+                            <i class="fa fa-clock-o" style="font-size: 70px;"></i>
+                        </span>
+                    </div>
+                    <br><br><br><br>
+                </div>
+                <div class="css-triangle1"></div>
+                <div class="article2">
+                    <div class="album_article">
+                        <span class="albumCover"></span>
+                        <img src="Images/article2-2.jpg" alt="Artist_Cover_Image" class="artistImage">
+
+                    </div>
+                    <div class="album_article article-text jsarticle2" style="padding: 120px 190px 0 75px; box-sizing: border-box;">
+                        <img src="Images/albumArticle.jpg" alt="headphone" class="a_a_image">
+                        <div class="title-text">Get your favourite albums. </div>
+                        <hr style="width: 94%; float: left;">
+                        <br>
+                        <div>All the latest albums in one place. Go ahead and grab yours from your favourite artist.
+                            <br>
+                            We have more than 500 albums from 80+ artists.
+                        </div>
+                        <br>
+                        <a href="shop.html">Shop Now</a>
+                    </div> 
+                </div>
+                <div class="article3">
+                    <div class="image_container">
+                        <div style="width: 74vw; position: absolute; color: white; font-size: 25px; text-align: center; background: rgba(0, 0, 0, 0.6); border-radius:10px ;">
+                        FIND YOUR PERFECT MATCH
+                        </div>
+                        <div class = "article3Change">
+                            <div class="title-text" style="margin-top: 30px; color: white;">MUSICAL INSTRUMENTS</div>
+                            <div class="article-text" style="color: white;">A masterpiece of artistry and engineering in your home.</div>
+                            <br>
+                            <div style="display: flex;">
+                                <div class="logo-icons" style="background-image: url('Images/steinway_logo.svg'); background-size: 190px;"></div>
+                                <div class="logo-icons" style="background-image: url(Images/fazioli_logo.svg);"></div>
+                                <div class="logo-icons" style="background-image: url('Images/fender0.png');"></div>
+                            </div>
+                            <br>
+                            <div style="display:flex;">
+                                <div class="logo-icons" style="background-image: url(Images/boesendorfer_logo.svg);"></div>
+                                <div class="logo-icons" style="background-image: url(Images/kawai_logo.svg);"></div>
+                                <div class="logo-icons" style="background-image: url('Images/yamaha-2-1.svg');"></div>
+                            </div>
+                            <div style="display:flex;">
+                                <div class="logo-icons" style="background-image: url(Images/gibson0.png);"></div>
+                                <div class="logo-icons" style="background-image: url(Images/pearl0.png);"></div>
+                                <div class="logo-icons" style="background-image: url('Images/takamine0.png');"></div>
+                            </div>
+                            <br>
+                            <a href="shop.html">Shop Now</a>           
+                        </div>                 
+                            <input type="radio" name="imagebtn" id="image1" checked>
+                            <input type="radio" name="imagebtn" id="image2">
+                            <input type="radio" name="imagebtn" id="image3">
+                            <input type="radio" name="imagebtn" id="image4">                    
+                        <div class="sliding first_div">
+                            <img src="Images/instrument1.jpg" alt="" class="sliding_images">
+                        </div>
+                        <div class="sliding">
+                            <img src="Images/instrument2.jpg" alt="" class="sliding_images">
+                        </div>
+                        <div class="sliding">
+                            <img src="Images/instrument3.jpg" alt="" class="sliding_images">
+                        </div>
+                        <div class="sliding">
+                            <img src="Images/instrument4.jpg" alt="" class="sliding_images">
+                        </div>
+                        <div class="radioBtn_container">
+                            <div class="auto-button1"></div>
+                            <div class="auto-button2"></div>
+                            <div class="auto-button3"></div>
+                            <div class="auto-button4"></div>
+                        </div>
+                        <div class="radioBtn_container">
+                            <label for="image1" class="mannual-nav cls1"></label>
+                            <label for="image2" class="mannual-nav cls2"></label>
+                            <label for="image3" class="mannual-nav cls3"></label>
+                            <label for="image4" class="mannual-nav cls4"></label>
+                        </div>    
+                    </div>
+                </div>
+                <br>
+                <div class="css-triangle1" style="transform: rotate(0deg); border-color: transparent transparent #FADDFE transparent;"></div>
+            
+                <div class="article4">
+                    <div class="article4Content">
+                        <div class="title-text" style="display: inline-block; border-bottom: 2px solid #D41D4D;">Are you a music Expert ?</div>
+                        <br><br>
+                        <div class="article-text">Compete against experts from around the world to test <br>your knowledge on music.<br> The top 3 individuals will win a share of the <strong>$1500 prize pool.</strong>
+                            <br><br>
+                            1<sup>st</sup> &nbsp;place &nbsp;= &nbsp;$700
+                            <br>
+                            2<sup>nd</sup> &nbsp;place &nbsp;= &nbsp;$500
+                            <br>
+                            3<sup>rd</sup> &nbsp;place &nbsp;= &nbsp;&nbsp;$300
+                        </div>
+                        <br>
+                        <div class="article-text">
+                            The qualifier round is a one minute online quiz. You can do this online <br>right now by clicking on the Attempt Now button. <br>The quiz contains <strong>10 questions</strong> with <strong>6 seconds</strong> per each. <br>Only the <strong>1<sup>st</sup> Attempt</strong> will be considered for the competition.
+                        </div>
+                        <br>
+                        <a href="Quiz.html" id="redirect">Attempt Now</a>
+                        <br><br>
+                    </div>
+                    <div class="orbitAnimationContainer">
+                        <div style="background-image:url('Images/article4.jpg'); background-size: cover; background-position-x: 45%;    background-repeat: no-repeat; width:15vw; height:15vw; border-radius: 100%; position: absolute; top: 26vh; left: 17.6vw;"></div>
+                        <div id="orbit1">
+                            <div class="imgIcon1"></div>
+                        </div>
+                        <div id="orbit2">
+                            <div class="imgIcon2"></div>
+                        </div>
+                        <div id="orbit3">
+                            <div class="imgIcon3"></div>
+                        </div>
+                        <br>
+                    </div>    
+                </div>
+            </div>
+            <!-- Footer Starts Here -->
+            <div class="footer-container">
+                <div class="foot1" style="background-color: #FADDFE;">
+                    <div class="footer1-sub">
+                        <div class="logo-text">Music Overflow</div>
+                        <div class="title-text" style="color: white; text-align: center; font-weight: 400;">Join us Today and get amazing deals</div>
+                        <button class="button-common" onclick="onJoinclick()">Sign Up Now</button>
+                    </div>    
+                </div>
+                <div class="foot2">
+                    <div class="footerBar" style="margin-top: 150px;">
+                        <a href="https://www.facebook.com/" class="anchor_dec fa fa-facebook fa-lg socialIcons" style="background-color: #1E8DF8; color: white;" target="_blank"></a>
+                        <a href="https://www.instagram.com/" class="anchor_dec fa fa-instagram fa-lg socialIcons" style="background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); color: white;" target="_blank"></a>
+                        <a href="https://twitter.com/?lang=en" class="anchor_dec fa fa-twitter fa-lg socialIcons"  style="background-color: #1E8DF8; color: white;" target="_blank"></a>
+                        <a href="https://www.youtube.com/" class="anchor_dec fa fa-youtube-play fa-lg socialIcons" style="background-color: #F02828; color: white;" target="_blank"></a>
+                    </div>
+                    <div class="footerBar" style="margin-top: 0;">
+                        <a href="billboard.html" class="footer-nav" target="_blank">Billboards #10</a>
+                        <a href="classicalHits.html" class="footer-nav" target="_blank">Classical Hits</a>
+                        <a href="instruments.html" class="footer-nav" target="_blank">Latest Instruments</a>
+                        <a href="Accessories.html" class="footer-nav" target="_blank">Music Accessories</a>
+                        <a href="pageEditor_kaveen.html" class="footer-nav" target="_blank">Editor Page</a>
+                        <a href="svg.html" class="footer-nav" target="_blank">Sitemap</a>
+                    </div>
+                    <br><br>
+                    <div class="footerBar">
+                        <small>Contact us :</small>
+                        <address>music@overflow.com</address>
+                        <br>
+                        <a href="#topOfPage" class="fa fa-arrow-up anchorArrow anchor_dec"></a>
+                        <br><br>
+                        <div class="footer-text">Copyright &copy; 2022 MusicOverflow. All rights reserved.</div>
+                    </div>       
+                </div>
+            </div>    
+        </div>
+
+        <script>
+            function openLoginModal() {
+                let login = document.getElementById("signup-modal");
+                login.style.display = "none";
+                let login1 = document.getElementById("signin-modal");
+                login1.style.display = "flex";
+                login1.classList.add("modalOpacity");
+            }
+            function passwordVisible() {
+                let vis = document.getElementById("password");
+                if (vis.type === "password") {
+                    vis.type = "text";
+                    } else {
+                    vis.type = "password";
+                }
+            }
+            function closeSuModal() {
+                document.querySelector(".main-container").className += 'closingOpacityBg';
+                let close = document.getElementById("signup-modal");
+                close.style.display = "none";
+            }
+            function closeSiModal() {
+                document.querySelector(".main-container").className += 'closingOpacityBg';
+                let close = document.getElementById("signin-modal");
+                close.style.display = "none";
+            }
+            function onJoinclick() {
+                let join = document.getElementById("signup-modal");
+                join.style.display = "flex";
+                join.classList.add("modalOpacity");
+                document.querySelector(".main-container").classList.add('bgOpacityDrop');
+            } 
+
+            for(i = 1; i < 5; i++) {
+                var aName = ".art11Animation" + i;
+                const scrollanim = document.querySelector(aName);
+                window.addEventListener('scroll', () => {
+                    const {scrollTop, clientHeight} = document.documentElement;
+                    const startPoint = scrollanim.getBoundingClientRect().top;
+                    if(scrollTop > (startPoint/4).toFixed()) {
+                        scrollanim.classList.add('active');
+                    }
+                }) 
+            };
+
+            var article2 = document.querySelector(".article2");
+            var article4 = document.querySelector(".article4Content")
+            window.addEventListener('scroll', () => {
+                const {scrollTop, clientHeight} = document.documentElement;
+                const startPoint2 = article2.getBoundingClientRect().top;
+                if (scrollTop > startPoint2.toFixed()) {
+                    document.querySelector(".jsarticle2").classList.add('active');
+                }
+                const startPoint3 = article4.getBoundingClientRect().top;
+                if (scrollTop > startPoint3.toFixed() * 4){
+                    article4.classList.add('active');
+                }
+            })
+        
+            var count = 1;
+            
+            setInterval(function(){
+                document.getElementById('image' + count).checked = true;
+                count ++
+                if (count > 4) {
+                    count = 1;
+                }
+            },6000) 
+
+            const cart = document.getElementById('openCart');
+            cart.addEventListener('click', () => {
+                alert("Shopping cart is currently empty. You will now be redirected to our store. Happy Shopping !");
+                window.open('shop.html', '_blank')
+            })
+        </script>
+
+    </body>
+    
+</html>

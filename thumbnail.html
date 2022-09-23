@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Thumbnails</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="music, albums, songs, instruments, piano, guitar, violins, drums">
+        <meta name="description" content="Music Shop">
+        <link rel="shortcut icon" type=image/jpg href="images/favicon.png">
+        <link rel="stylesheet" href="stylesMain.css">
+        <link rel="stylesheet" href="styles_thumbnail.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300&family=Mukta+Mahee:wght@200&family=Mukta:wght@300;400&family=Poppins:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=The+Nautigal:wght@700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!--Sign up Modal-->
+        <div id="signup-modal">
+            <div class="modal-subContainer1">
+                <div class="title-text" style="margin-top: 15px;">Create an Account.</div>
+                <em style="color: grey;">It's Quick and Easy.</em>
+                <form method="post" action=" thumbnail.html" class="signup-form">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required="required" style="font-family: 'Mukta', sans-serif;">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required="required" minlength="8">
+                    <small style="font-weight: 200;">Password should contain 8 letters minimum.</small>
+                    <br>
+                    <input type="checkbox" onclick="passwordVisible()" style="width: initial; height: initial; display: inline;">
+                    <small style="display: inline;">Show Password</small>
+                    <br>
+                    <br>
+                    <table>
+                        <tr>
+                            <td style="width: 65%;">
+                                Already have an Account ?<br>
+                                <button style="background-color: transparent; color: purple; border: none; font-family: 'Mukta', sans-serif;font-size: 17px;" onclick="openLoginModal()">Log in ></button>
+                            </td>
+                            <td>
+                                <input type="submit" value="Sign Up" style=" width: 120px; height: 60px; background-color: #C02350; color: white;">
+                            </td>
+                        </tr>
+                    </table>
+                </form> 
+            </div>  
+            <div class="modal-subContainer2" style="background-image: url('images/signup.jpg');">
+            <button onclick="closeSuModal()" class="modalCloseButton">X</button>
+            </div>
+        </div>
+        <!--Sign in Modal-->
+        <div id="signin-modal">
+            <div class="modal-subContainer1" style="background-color: #FEE7BD;">
+                <div class="title-text" style="margin-top: 15px;">Welcome Back</div>
+                <form method="post" action="thumbnail.html" class="signup-form">
+                    <label for="email1">Email Address</label>
+                    <input type="email" id="email1" name="email_1" required="required" style="font-family: 'Mukta', sans-serif; background-color: #FEF3E0;">
+                    <label for="password1">Password</label>
+                    <input type="password" id="password1" name="password_1" required="required" minlength="8" style="background-color: #FEF3E0;">
+                    <input type="submit" value="Sign in" style="background-color: #F2A726; margin-top:25px; color: white;">
+                    <div style="margin-top: 10px;">Sign in with,</div>
+                    <button class="signin-buttons fa fa-google"></button>
+                    <button class="signin-buttons fa fa-facebook"></button> 
+                    <button class="signin-buttons fa fa-twitter"></button>
+                </form>
+            </div>
+            <div class="modal-subContainer2" style="background-image: url('images/signin.jpg');">
+                <button onclick="closeSiModal()" class="modalCloseButton">X</button> 
+            </div>
+        </div>
+        <!-- Header Starts here -->
+        <div class="main-container" id="main-container" style="background:rgb(176, 177, 241); color:#3e43cac4;">
+            <div class="header-container" id="topOfPage">
+                <!-- Navigation Bar -->
+                <nav>  
+                    <span class="logo-text" style="font-size: 40px; float: left; margin: 5px 3vw 0 3vw;">Music Overflow</span>
+                    <ul>  
+                        <li><a href=" index.html"  class="anchor_dec">Home</a></li>
+                        <li>Store
+                            <ul class="subnav">
+                                <li><a href=" shop.html" target="_blank" class="anchor_dec">Albums</a></li>
+                                <li><a href=" shop.html" target="_blank" class="anchor_dec">Instruments</a></li>
+                            </ul> 
+                        </li>
+                        <li><a href=" queryForm.html" class="anchor_dec">Queries</a></li>
+                        <li><a href=" Quiz.html" class="anchor_dec">Quiz</a></li>
+                        <li><a href="svg.html" class="anchor_dec">Sitemap</a></li>
+                        <li><a href="thumbnail.html" class="anchor_dec">Thumbnails</a></li>
+                        <li><a href=" AboutUs.html" class="anchor_dec">About Us</a></li>
+                    </ul>
+                    <button class="fa fa-shopping-cart navButtons" style="margin: -3px 5% auto 30px; padding: 10px;" id="openCart"></button>
+                    <button class="navButtons" style="border-radius: 30px;font-size: 17px; padding: 5px 15px; font-family: 'Mukta', sans-serif; margin-top: -5px;" onclick="onJoinclick()"><span>Join Us Now</span></button>      
+                </nav>
+                <div style="flex:1 1 auto; background: linear-gradient(90deg,#ff01ea73,#02b7ffd3); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+                font-size: 50px; font-family: 'Mukta', sans-serif;"> 
+                Music is for souls & hearts to dance & sing
+                </div>
+            </div>
+            <!-- Article starts here -->
+            
+            <div class="article-container" id="article-container" style=" width:100%">
+                <div class ='bg' style="text-align: center;">
+                     <!--change background color-->   
+                    <select class="selectColor" onchange="changeColor (this)" style="display:inline-block">
+                        <option>Background Color Themes</option>
+                        <option value="#6fa8dc">Blue Theme</option>
+                        <option value="#8fce00">Green Theme</option>
+                        <option value="#cc0000">Red Theme</option>
+                        <option value="#c40274">Pink Theme</option>
+                        <option value="#ffff12">Yellow Theme</option>
+                        <option value="#000000">Black Theme</option>
+                    </select>
+                </div>
+                <br> 
+                <div class="fontpara" style="text-align: center; width:100%; background-color: #1e46f842; padding:10px; opacity: 50; display:inline-block">
+                    <p>Relax, Chillout and Unwind..</p>
+                    <p>“You have to, take a deep breath. and allow the music to flow through you.Revel in it, allow yourself to awe. When you play allow the music to break your heart with its beauty.” </p> 
+                    <p>– Kelly White-</p>
+
+                     <!--change font color-->                  
+                    <select class="selectFont"  onchange="changeFont(this)" >
+                        <option>Change Font Color</option>
+                        <option value="#4d2c91">Purple</option>
+                        <option value="#006400">Green</option>
+                        <option value="#8B0000">Red</option>
+                        <option value="#ffeb3b">Yellow</option>
+                        <option value="#000000">Black</option>
+                    </select>
+                    
+                </div>
+                <!--radio buttons for thumbnails-->
+                <div class="container" style="text-align: center; width:100%; background-color: #1ef8db28; padding:10px; opacity:50; display:inline-block"> 
+                        <div class="image-box" onchange="changetext(this)">
+                            
+                            <input type="radio" id="image1" name="image"  onchange="getValue(this)" >
+                            <input type="radio" id="image2" name="image"  onchange="getValue(this)" checked>
+                            <input type="radio" id="image3" name="image"  onchange="getValue(this)" >
+                            <input type="radio" id="image4" name="image"  onchange="getValue(this)" >
+                            <input type="radio" id="image5" name="image"  onchange="getValue(this)" >
+                            <br>
+                            <div class="image-bg"></div> 
+                            <div class="des-bg" id="des-bg"></div>
+                        </div>
+                </div>
+                <p   style="text-align: center;">“Music gives a soul to the universe, wings to the mind, flight to the imagination, and life to everything.” – Plato </p> 
+                   
+            <!--music player-->
+            <div class="player">
+                <div class="left">
+                    <img  src="images/musicIcon.png"  alt="music icon" height="400" width="400">
+                        <div class="volume">
+                            <p id="volume_show">90</p>
+                            <i class="fa fa-volume-up" aria-hidden="true" onclick="mute_sound()" id="volume_icon"></i>
+                            <input type="range" min="0" max="100" value="90" onchange="volume_change()" id="volume">  
+                        </div>
+                     
+                </div>
+                 <div class="right">
+                    <div class="show_song_no">
+                        <p id="present">1</p>
+                        <p>/</p>
+                        <p id="total">5</p>
+                    </div>
+          
+                    <p id="title">title.mp3</p>
+                    <p id="artist">Artist name</p>
+                    <div class="middle">
+                        <button onclick="previous_song()" id="pre"><i class="fa fa-step-backward" aria-hidden="true"></i></button>
+                        <button onclick="justplay()" id="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                        <button onclick="next_song()" id="next"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
+                    </div>
+          
+                    <div class="duration">
+                        <input type="range" min="0" max="100" value="0" id="duration_slider" onchange="change_duration()">
+                    </div>
+                    <button id="auto" onclick="autoplay_switch()">Auto play <i class="fa fa-circle-o-notch" aria-hidden="true"></i></button>
+                </div>
+            </div>
+            <br>
+            <br>
+        </div>        
+            <!-- Footer Starts Here -->
+            <div class="footer-container">
+                <div class="foot1" >
+                    <div class="footer1-sub">
+                        <div class="logo-text">Music Overflow</div>
+                        <div class="title-text" style="color:aliceblue; font-weight: 400;">Join us Today and get amazing deals</div>
+                        <button class="button-common" onclick="onJoinclick()">Sign Up Now</button>
+                    </div>    
+                </div>
+                <div class="foot2">
+                    <div class="footerBar" style="margin-top: 150px;">
+                        <a href="https://www.facebook.com/"   class="fa fa-facebook fa-lg socialIcons anchor_dec" style="background-color: #1E8DF8; color: white;" target="_blank"></a>
+                        <a href="https://www.instagram.com/"   class="fa fa-instagram fa-lg socialIcons anchor_dec" style="background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); color: white;" target="_blank"></a>
+                        <a href="https://twitter.com/?lang=en"  class="fa fa-twitter fa-lg socialIcons anchor_dec"  style="background-color: #1E8DF8; color: white;" target="_blank"></a>
+                        <a href="https://www.youtube.com/"   class="fa fa-youtube-play fa-lg socialIcons anchor_dec" style="background-color: #F02828; color: white;" target="_blank"></a>
+                    </div>
+                    <div class="footerBar" style="margin-top: 0;">
+                        <a href=" billboard.html" class="footer-nav" target="_blank">Billboards #10</a>
+                        <a href=" classicalHits.html" class="footer-nav" target="_blank">Classical Hits</a>
+                        <a href="instruments.html" class="footer-nav"  target="_blank">Latest Instruments</a>
+                        <a href=" Accessories.html" class="footer-nav"  target="_blank">Music accessories</a>
+                        <a href="pageEditor_kavini.html" class="footer-nav" target="_blank">Editor Page</a>
+                        <a href="svg.html" class="footer-nav">Sitemap</a>
+                    </div>
+                    <br><br>
+                    <div class="footerBar">
+                        <small>Contact us :</small>
+                        <address>music@overflow.com</address>
+                        <br>
+                        <a href="#topOfPage" class="fa fa-arrow-up anchorArrow anchor_dec"></a>
+                        <br><br>
+                        <div class="footer-text">Copyright &copy; 2022 MusicOverflow. All rights reserved.</div>
+                    </div>       
+                </div>
+            </div>    
+        </div>
+
+        <script>
+            function openLoginModal() {
+                let login = document.getElementById("signup-modal");
+                login.style.display = "none";
+                let login1 = document.getElementById("signin-modal");
+                login1.style.display = "flex";
+                login1.classList.add("modalOpacity");
+            }
+            function passwordVisible() {
+                let vis = document.getElementById("password");
+                if (vis.type === "password") {
+                    vis.type = "text";
+                    } else {
+                    vis.type = "password";
+                }
+            }
+            function closeSuModal() {
+                document.querySelector(".main-container").className += 'closingOpacityBg';
+                let close = document.getElementById("signup-modal");
+                close.style.display = "none";
+            }
+            function closeSiModal() {
+                document.querySelector(".main-container").className += 'closingOpacityBg';
+                let close = document.getElementById("signin-modal");
+                close.style.display = "none";
+            }
+            function onJoinclick() {
+                let join = document.getElementById("signup-modal");
+                join.style.display = "flex";
+                join.classList.add("modalOpacity");
+                document.querySelector(".main-container").classList.add('bgOpacityDrop');
+            } 
+            
+             //js for thumbnails
+             function getValue(radio) {
+         
+     
+                 if(document.getElementById("image1").checked) {
+                    const changeText = document.querySelector(".des-bg");
+                    changeText.innerText = "Song by: David Guetta |  Vocals by: Sia Furler | Genre: House Dance ";
+                    console.log("CHECKED")
+                }
+                else if (document.getElementById("image2").checked ) {
+                    const changeText = document.querySelector(".des-bg");
+                    changeText.innerText = "Song by: Zara Larsson | Vocals by: Emanuel Abrahamsson | Genre: Electro Pop  ";
+                    console.log("CHECKED")
+                }
+                else if (document.getElementById("image3").checked ) {
+                    const changeText = document.querySelector(".des-bg");
+                    changeText.innerText = "Song by: DNCE |  Vocals by: Joseph Jonas | Genre: Disco";
+                    console.log("CHECKED")
+                }
+                else if (document.getElementById("image4").checked ) {
+                    const changeText = document.querySelector(".des-bg");
+                    changeText.innerText = "Song by: Akon  | Vocals by: Thiam | Genre: Reggae";
+                    console.log("CHECKED")
+                }
+                else if (document.getElementById("image5").checked ) {
+                    const changeText = document.querySelector(".des-bg");
+                    changeText.innerText = "Song and Vocals by: Louisa Rose Allen(FOXES) |  Genre: Vocal Music";
+                    console.log("CHECKED")
+                 };  
+            }
+
+            //script for background color change and font color change
+
+            function changeColor(getColor){
+            let bg = document.querySelector('.main-container');
+            let selectColor = getColor.value;
+            bg.style.background = selectColor;}
+
+            function changeFont(getColor){
+            let selectFont = getColor.value;
+            document.getElementById("main-container").style.color = selectFont;} 
+
+             
+            //script for music player
+
+            let previous = document.querySelector('#pre');
+            let play = document.querySelector('#play');
+            let next = document.querySelector('#next');
+            let title = document.querySelector('#title');
+            let recent_volume= document.querySelector('#volume');
+            let volume_show = document.querySelector('#volume_show');
+            let slider = document.querySelector('#duration_slider');
+            let show_duration = document.querySelector('#show_duration');
+            let auto_play = document.querySelector('#auto');
+            let present = document.querySelector('#present');
+            let total = document.querySelector('#total');
+            let artist = document.querySelector('#artist');
+
+
+
+            let timer;
+            let autoplay = 0;
+            let index_no = 0;
+            let Playing_song = false;
+            let track = document.createElement('audio');
+
+            let All_song = [
+    {
+            name: "first song",
+            path: "music/audio1.mp3",
+            singer: "1"
+    },
+    {
+            name: "second song",
+            path: "music/audio2.mp3",
+            singer: "2"
+    },
+    {
+            name: "third song",
+            path: "music/audio3.mp3",
+            singer: "3"
+   },
+   {
+            name: "fourth song",
+            path: "music/audio4.mp3",
+            singer: "4"
+   },
+   {
+            name: "fifth song",
+            path: "music/audio5.mp3",
+            singer: "5"
+    }
+    ];
+
+ 
+    function load_track(index_no){
+	clearInterval(timer);
+	reset_slider();
+
+	track.src = All_song[index_no].path;
+	title.innerHTML = All_song[index_no].name;	
+    artist.innerHTML = All_song[index_no].singer;
+    track.load();
+
+	timer = setInterval(range_slider ,1000);
+	total.innerHTML = All_song.length;
+	present.innerHTML = index_no + 1;
+    }
+
+    load_track(index_no);
+
+    function mute_sound(){
+	track.volume = 0;
+	volume.value = 0;
+	volume_show.innerHTML = 0;
+    }
+
+    function justplay(){
+ 	if(Playing_song==false){
+ 		playsong();
+
+ 	}else{
+ 		pausesong();
+ 	}
+    }
+
+    function reset_slider(){
+ 	slider.value = 0;
+    }
+ 
+    function playsong(){
+    track.play();
+    Playing_song = true;
+    play.innerHTML = '<i class="fa fa-pause" aria-hidden="true"></i>';
+    }
+
+    function pausesong(){
+	track.pause();
+	Playing_song = false;
+	play.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
+    }
+
+    function next_song(){
+	if(index_no < All_song.length - 1){
+		index_no += 1;
+		load_track(index_no);
+		playsong();
+	}else{
+		index_no = 0;
+		load_track(index_no);
+		playsong();
+
+	}
+    }
+ 
+    function previous_song(){
+	if(index_no > 0){
+		index_no -= 1;
+		load_track(index_no);
+		playsong();
+
+	}else{
+		index_no = All_song.length;
+		load_track(index_no);
+		playsong();
+	}
+    }
+ 
+    function volume_change(){
+	volume_show.innerHTML = recent_volume.value;
+	track.volume = recent_volume.value / 100;
+    }
+
+  
+    function change_duration(){
+	slider_position = track.duration * (slider.value / 100);
+	track.currentTime = slider_position;
+    }
+
+ 
+    function autoplay_switch(){
+	if (autoplay==1){
+       autoplay = 0;
+       auto_play.style.background = "rgba(255,255,255,0.2)";
+	}else{
+       autoplay = 1;
+       auto_play.style.background = "#FF8A65";
+	}
+    }
+
+
+    function range_slider(){
+	let position = 0;
+        
+        // update slider position
+		if(!isNaN(track.duration)){
+		   position = track.currentTime * (100 / track.duration);
+		   slider.value =  position;
+	      }
+
+       
+       // function will run when the song is over
+       if(track.ended){
+       	 play.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
+           if(autoplay==1){
+		       index_no += 1;
+		       load_track(index_no);
+		       playsong();
+           }
+	    }
+     }
+     //----------------------cart------------------------------------------
+    const cart = document.getElementById('openCart');
+    cart.addEventListener('click', () => {
+    alert("Shopping cart is currently empty. You will now be redirected to our store. Happy Shopping !");
+    window.open('shop.html', '_blank');
+    })
+    </script>
+    </body>
+</html>

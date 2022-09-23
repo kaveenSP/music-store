@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Quiz</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="music, albums, songs, instruments, piano, guitar, violins, drums">
+        <meta name="description" content="Music Shop">
+        <link rel="shortcut icon" type=image/jpg href="Images/favicon.png">
+        <link rel="stylesheet" href="stylesMain.css">
+        <link rel="stylesheet" href="Mystyles.css">
+        <link rel="stylesheet" href="Quiz.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300&family=Mukta+Mahee:wght@200&family=Mukta:wght@300;400&family=Poppins:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=The+Nautigal:wght@700&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <!--Sign un Modal-->
+        <div id="signup-modal">
+            <div class="modal-subContainer1">
+                <div class="title-text" style="margin-top: 15px;">Create an Account.</div>
+                <em style="color: grey;">It's Quick and Easy.</em>
+                <form method="post" action="Quiz.html" class="signup-form" style=" color: black;">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required="required" style="font-family: 'Mukta', sans-serif;color: black;">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required="required" minlength="8">
+                    <small style="font-weight: 200; color: black;">Password should contain 8 letters minimum.</small>
+                    <br>
+                    <input type="checkbox" onclick="passwordVisible()" style="width: initial; height: initial; display: inline;">
+                    <small style="display: inline;">Show Password</small>
+                    <br>
+                    <br>
+                    <table>
+                        <tr>
+                            <td style="width: 65%;">
+                                Already have an Account ?<br>
+                                <button style="background-color: transparent; color: purple; border: none; font-family: 'Mukta', sans-serif;font-size: 17px;" onclick="openLoginModal()">Log in ></button>
+                            </td>
+                            <td>
+                                <input type="submit" value="Sign Up" style=" width: 120px; height: 60px; background-color: #C02350; color: white;">
+                            </td>
+                        </tr>
+                    </table>
+                </form> 
+            </div>  
+            <div class="modal-subContainer2" style="background-image: url('Images/signup.jpg');">
+            <button onclick="closeSuModal()" class="modalCloseButton">X</button>
+            </div>
+        </div>
+        <!--Sign in Modal-->
+        <div id="signin-modal">
+            <div class="modal-subContainer1" style="background-color: #FEE7BD;">
+                <div class="title-text" style="margin-top: 15px;">Welcome Back</div>
+                <form method="post" action="Quiz.html" class="signup-form">
+                    <label for="email1">Email Address</label>
+                    <input type="email" id="email1" name="email_1" required="required" style="font-family: 'Mukta', sans-serif; background-color: #FEF3E0;">
+                    <label for="password1">Password</label>
+                    <input type="password" id="password1" name="password_1" required="required" minlength="8" style="background-color: #FEF3E0;">
+                    <input type="submit" value="Sign in" style="background-color: #F2A726; margin-top:25px; color: white;">
+                    <div style="margin-top: 10px;">Sign in with,</div>
+                    <button class="signin-buttons fa fa-google"></button>
+                    <button class="signin-buttons fa fa-facebook"></button> 
+                    <button class="signin-buttons fa fa-twitter"></button>
+                </form>
+            </div>
+            <div class="modal-subContainer2" style="background-image: url('Images/signin.jpg');">
+                <button onclick="closeSiModal()" class="modalCloseButton">X</button> 
+            </div>
+        </div>
+        <!-- Header Starts here -->
+        <div class="main-container">
+            <div class="header-container">
+                <!-- Navigation Bar -->
+                <nav>  
+                    <span class="logo-text" style="font-size: 40px; float: left; margin: 5px 3vw 0 3vw;">Music Overflow</span>
+                    <ul>  
+                        <li><a href="index.html" class="anchor_dec">Home</a></li>
+                        <li>Store
+                            <ul class="subnav">
+                                <li><a href="shop.html" class="anchor_dec">Albums</a></li>
+                                <li><a href="shop.html" class="anchor_dec">Instruments</a></li>
+                            </ul> 
+                        </li>
+                        <li><a href="queryForm.html" class="anchor_dec">Queries</a></li>
+                        <li><a href="Quiz.html" class="anchor_dec">Quiz</a></li>
+                        <li><a href="svg.html" class="anchor_dec">Sitemap</a></li>
+                        <li><a href="thumbnail.html" class="anchor_dec">Thumbnails</a></li>
+                        <li><a href="AboutUs.html" class="anchor_dec">About Us</a></li>
+                    </ul>
+                    <button class="fa fa-shopping-cart navButtons" style="margin: -3px 5% auto 30px; padding: 10px;" id="openCart"></button>
+                    <button class="navButtons" style="border-radius: 30px;font-size: 17px; padding: 5px 15px; font-family: 'Mukta', sans-serif; margin-top: -5px;" onclick="onJoinclick()"><span>Join Us Now</span></button>      
+                </nav>
+
+
+                <div style="flex:1 1 auto; color: white; font-size: 30px; "><span class="logo-text">Music Overflow Quiz Arena</span>
+                    <div class="header-text" style="font-family: 'Mukta'; color:#f56f83">
+                        We've got quizzes you love to binge in music. Come on in and hung down for the long haul.
+                    </div>
+                </div>
+            </div>
+            </div>  
+       
+
+        
+            <!-- Article starts here -->
+            <div class="article-container" style=" width:100%; font-family:'Mukta';">
+
+                <p class="start">QUIZ Time</p>
+                <p class="name">Enter your name to start the quiz</p>
+
+                <textarea id="textarea" rows="2" cols="18" placeholder="NAME...." style="font-size:30px; text-align:center;"></textarea>
+                <p class="text">Time taken :</p><div id="timer"></div>
+
+
+                <p id="message001"></p>
+                <p id="answer001"></p>
+                <p id="comments001"></p>
+                <p id="click001"></p>
+
+    <script>
+        let seconds=60;
+        let timer;
+        function myFunction() {
+        if(seconds < 60) {
+            document.getElementById("timer").innerHTML = seconds;
+        }
+            if (seconds >0 ) {
+                seconds--;
+            } else {
+                // clearInterval(timer);
+                alert("End of Quiz");
+                getRadioValue();
+
+            }
+        }
+        document.getElementById("textarea").onkeypress = function() {
+        if(!timer) {
+            timer = window.setInterval(function() {
+            myFunction();
+            }, 1000);
+  }
+} 
+
+
+document.getElementById("timer").innerHTML="1:00 minute"; 
+
+
+        let a;
+        let b;
+        let c;
+        let d;
+        let e;
+        let f;
+        let g;
+        let h;
+        let i;
+        let j;
+        let k;
+        let l;
+        let m;
+        let n;
+        let o;
+        let p;
+        let q;
+        let r;
+        let s;
+        let t;
+        let z;
+
+        let question001 = ["Q1) Which band,group or artist is credited as the Best-selling artists worldwide ?<br><br /><input  onclick=option001() name=button001 type=radio  />The Rolling Stone<br /><br /><input onclick=option002() name=button001 type=radio />The Beatles<br /><br /><input onclick=option003() name=button001 type=radio />The Beach Boys<br /><br />Q2) Who is considered as the King of Pop ?<br /><br /><input onclick=option004() name=button002 type=radio />John Bieber<br /><br /><input onclick=option005() name=button002 type=radio />Michael Jackson<br /><br /><input onclick=option006() name=button002 type=radio />Elton John<br /><br />Q3) Where did Justin Bieber's talent manager discover him?<br /><br /><input onclick=option007() name=button003 type=radio />The Voice<br /><br /><input onclick=option008() name=button003 type=radio />YouTube<br /><br /><input onclick=option009() name=button003 type=radio />American Idol<br /><br />Q4) Who is the youngest solo artist with a No.1 hit on the Billboard Hot 100 ?<br><br /><input  onclick=option010() name=button004 type=radio  />Michael Jackson<br /><br /><input onclick=option011() name=button004 type=radio />Lorde<br /><br /><input onclick=option012() name=button004 type=radio />Steve Wonder<br /><br />Q5) How big is Mariah Carey's Vocal range ?<br /><br /><input onclick=option013() name=button005 type=radio />5 Octaves<br /><br /><input onclick=option014() name=button005 type=radio />4 Octaves<br /><br /><input onclick=option015() name=button005 type=radio />6 Octaves<br /><br />Q6)Who is the best famous female artist at all times ?<br /><br /><input onclick=option016() name=button006 type=radio />Madonna<br /><br /><input onclick=option017() name=button006 type=radio />Diana Ross<br /><br /><input onclick=option018() name=button006 type=radio />Ceiline Dion<br /><br /><br>Q7) How many members are there in Korean boy band-BTS?<br><input  onclick=option019() name=button007 type=radio  />Six<br /><br /><input onclick=option020() name=button007 type=radio />Seven<br /><br /><input onclick=option021() name=button007 type=radio />Five<br /><br />Q8) How many instrument families are occupied in music?  <br /><br /><input onclick=option022() name=button008 type=radio />2<br /><br /><input onclick=option023() name=button008 type=radio />8<br /><br /><input onclick=option024() name=button008 type=radio />6<br /><br />Q9)What family of instruments do you hit when you play them?<br /><br /><input onclick=option025() name=button009 type=radio />Brass<br /><br /><input onclick=option026() name=button009 type=radio />Percussion<br /><br /><input onclick=option027() name=button009 type=radio />Woodwind<br /></br>Q10)What was the title of Taylor Swift's first alburm ?<br><br /><input  onclick=option028() name=button010 type=radio  />Our Song<br /><br /><input onclick=option029() name=button010 type=radio />Speak now<br /><br /><input onclick=option030() name=button010 type=radio />Taylor Swift<br /><br />"];
+       
+        window.onload = function () {
+            a = 0;
+            b = 0;
+            c = 0;
+            d = 0;
+            e = 0;
+            f = 0;
+            g = 0;
+            h = 0;
+            i = 0;
+            j = 0;
+          
+          
+            message001.innerHTML = question001;
+           
+            click001.innerHTML = "<button onclick=getRadioValue() class=click>Submit</button>";
+        }
+
+        function option001() {
+            a = 2;
+            k= 1;
+        }
+
+        function option002() {
+            a = 2;
+            k = 2;
+        }
+
+        function option003() {
+            a = 2;
+            k = 3;
+        }
+
+        function option004() {
+            b = 2;
+            l = 1;
+        }
+
+        function option005() {
+            b = 2;
+            l = 2;
+        }
+
+        function option006() {
+            b = 2;
+            l = 3;
+        }
+
+        function option007() {
+            c = 2;
+            m = 1;
+        }
+
+        function option008() {
+            c = 2;
+            m = 2;
+        }
+
+        function option009() {
+            c = 2;
+            m = 3;
+        }
+        function option010() {
+            d = 2;
+            n = 1;
+        }
+        function option011() {
+            d = 2;
+            n = 2;
+        }
+        function option012() {
+            d = 2;
+            n = 3;
+        }
+        function option013() {
+            e = 2;
+            o = 1;
+        }
+        function option014() {
+            e = 2;
+            o= 2;
+        }
+        function option015() {
+            e = 2;
+            o = 3;
+        }
+        function option016() {
+            f = 2;
+            p = 1;
+        }
+        function option017() {
+            f = 2;
+            p= 2;
+        }
+        function option018() {
+            f = 2;
+            p = 3;
+        }
+        function option019() {
+            g = 2;
+            q = 1;
+        }
+        function option020() {
+            g = 2;
+            q = 2;
+        }
+        function option021() {
+            g = 2;
+            q = 3;
+        }
+        function option022() {
+            h = 2;
+            r = 1;
+        }
+        function option023() {
+            h = 2;
+            r = 2;
+        }
+        function option024() {
+            h = 2;
+            r= 3;
+        }
+        function option025() {
+            i = 2;
+            s = 1;
+        }
+        function option026() {
+            i = 2;
+            s = 2;
+        }
+        function option027() {
+            i = 2;
+            s = 3;
+        }
+        function option028() {
+            j = 2;
+            t = 1;
+        }
+        function option029() {
+            j = 2;
+            t = 2;
+        }
+        function option030() {
+            j = 2;
+            t = 3;
+        }
+
+
+        function getRadioValue() {
+            z = a + b + c+ d+ e+ f+ g+ h+ i+ j;
+            if(z<=5)
+            document.body.style.backgroundColor="red"
+            else if(z>=8)
+            document.body.style.backgroundColor="grey"
+            else if(z==10)
+            document.body.style.backgroundColor="orange"
+            else if(z==15)
+            document.body.style.backgroundColor="pink"
+            else if(z==18)
+            document.body.style.backgroundColor="blue"
+            else if(z==20)
+            document.body.style.backgroundColor="green"
+            else
+            document.body.style.backgroundColor="white"
+
+            clearInterval(timer);
+
+            message001.innerHTML = "End of Quiz";
+            comments001.innerHTML = "Your score is " + z + "<br /><br />" + "Q1)Which band,group or artist is credited as the Best-selling artists worldwide ? Your answer is " + k + ".<br> The correct answer is The Beatles" + "<br /><br />" + "Q2) Who is considered as the King of Pop ? Your answer is " + l + ".<br> The correct answer is Michael Jackson" + "<br /><br />" + "Q3) Where did Justin Bieber's talent manager discover him ? Your answer is " + m+ ".<br> The correct answer is YouTube"+"<br /><br />" + "Q4 )Who is the youngest solo artist with a No.1 hit on the Billboard Hot 100 ? Your answer is " + n + ". <br>The correct answer is Stevie Wonder</br></br>"+"Q5) How big is Mariah Carey's Vocal range ? Your answer is:"+o+"<br>Correct answer is 5 Octaves</br></br>"+"Q6)Who is the best selling female artist at all times ? Your answer is:" +p+"<br>Correct answer is Madonna </br></br>"+"Q7)How many members are there in Korea boy band-BTS? Your answer is :"+q+ "<br> Correct answer is Seven </br></br> "+"Q8)How many instrument families are occupied in music? Your answer is:"+r+"<br> Correct answer is 6</br></br>"+"Q9)What family of instruments do you hit when you play them? Your answer is:"+s+ "<br>Correct answer is Percussion</br></br>"+"Q10)What was the title of Taylor Swift's first alburm ? Your answer is:"+t+"<br> Correct answer is Taylor Swift";
+            click001.innerHTML = "<button onclick=repeat001()>Repeat</button>"
+        }   
+
+        function repeat001() {
+            location.reload();
+        }
+
+    </script>
+            </div>    
+            <!-- Footer Starts Here -->
+            <div class="footer-container">
+                <div class="foot1" style="background-color: rgb(243, 247, 207);">
+                    <div class="footer1-sub">
+                        <div class="logo-text">Music Overflow</div>
+                        <div class="title-text" style="color: white; text-align: center; font-weight: 400;">Join us Today and get amazing deals</div>
+                        <button class="button-common" onclick="onJoinclick()">Sign Up Now</button>
+                    </div>    
+                </div>
+                <div class="foot2">
+                    <div class="footerBar" style="margin-top: 150px;">
+                        <a href="https://www.facebook.com/"  class="fa fa-facebook fa-lg socialIcons anchor_dec" style="background-color: #1E8DF8; color: white;" target="_blank"></a>
+                        <a href="https://www.instagram.com/"  class="fa fa-instagram fa-lg socialIcons anchor_dec" style="background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); color: white;" target="_blank"></a>
+                        <a href="https://twitter.com/?lang=en" class="fa fa-twitter fa-lg socialIcons anchor_dec"  style="background-color: #1E8DF8; color: white;" target="_blank"></a>
+                        <a href="https://www.youtube.com/"  class="fa fa-youtube-play fa-lg socialIcons anchor_dec" style="background-color: #F02828; color: white;" target="_blank"></a>
+                    </div>
+                    <div class="footerBar" style="margin-top: 0;">
+                        <a href="billboard.html" class="footer-nav" target="_blank">Billboards #10</a>
+                        <a href="classicalHits.html" class="footer-nav" target="_blank">Classical Hits</a>
+                        <a href="instruments.html" class="footer-nav" target="_blank">Latest Instuments</a>
+                        <a href="Accessories.html" class="footer-nav" target="_blank">Music Accessories</a>
+                        <a href="pageEditor_kalpana.html" class="footer-nav" target="_blank">Editor Page</a>
+                        <a href="svg.html" class="footer-nav" target="_blank">Sitemap</a>
+                    </div>
+                    <br><br>
+                    <div class="footerBar">
+                        <small>Contact us :</small>
+                        <address>music@overflow.com</address>
+                        <br>
+                        <a href="#topOfPage" class="fa fa-arrow-up anchorArrow anchor_dec"></a>
+                        <br><br>
+                        <div class="footer-text">Copyright &copy; 2022 MusicOverflow. All rights reserved.</div>
+                    </div>       
+                </div>
+            </div>    
+        
+
+        <script>
+            function openLoginModal() {
+                let login = document.getElementById("signup-modal");
+                login.style.display = "none";
+                let login1 = document.getElementById("signin-modal");
+                login1.style.display = "flex";
+                login1.classList.add("modalOpacity");
+            }
+            function passwordVisible() {
+                let vis = document.getElementById("password");
+                if (vis.type === "password") {
+                    vis.type = "text";
+                    } else {
+                    vis.type = "password";
+                }
+            }
+            function closeSuModal() {
+                document.querySelector(".main-container").className += 'closingOpacityBg';
+                let close = document.getElementById("signup-modal");
+                close.style.display = "none";
+            }
+            function closeSiModal() {
+                document.querySelector(".main-container").className += 'closingOpacityBg';
+                let close = document.getElementById("signin-modal");
+                close.style.display = "none";
+            }
+            function onJoinclick() {
+                let join = document.getElementById("signup-modal");
+                join.style.display = "flex";
+                join.classList.add("modalOpacity");
+                document.querySelector(".main-container").classList.add('bgOpacityDrop');
+            }    
+
+            const cart = document.getElementById('openCart');
+            cart.addEventListener('click', () => {
+                alert("Shopping cart is currently empty. You will now be redirected to our store. Happy Shopping !");
+                window.open('shop.html', '_blank');
+            })
+        </script>
+    </body>
+</html>

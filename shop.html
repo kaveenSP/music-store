@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Overflowing Store</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="music, albums, songs, instruments, piano, guitar, violins, drums">
+        <meta name="description" content="Music Shop">
+        <link rel="shortcut icon" type=image/jpg href="Images/favicon.png">
+        <link rel="stylesheet" href="stylesMain.css">
+
+        <link rel="stylesheet" href="styles_shop.css">
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300&family=Mukta+Mahee:wght@200&family=Mukta:wght@300;400&family=Poppins:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=The+Nautigal:wght@700&display=swap" rel="stylesheet">
+        
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
+
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+
+
+
+    </head>
+    <body>
+        
+        <!--Sign un Modal-->
+        <div id="signup-modal">
+            <div class="modal-subContainer1">
+                <div class="title-text" style="margin-top: 15px;">Create an Account.</div>
+                <em style="color: grey;">It's Quick and Easy.</em>
+                <form method="post" action="shop.html" target="_self" class="signup-form">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required="required" style="font-family: 'Mukta', sans-serif;">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required="required" minlength="8">
+                    <small style="font-weight: 200;">Password should contain 8 letters minimum.</small>
+                    <br>
+                    <input type="checkbox" onclick="passwordVisible()" style="width: initial; height: initial; display: inline;">
+                    <small style="display: inline;">Show Password</small>
+                    <br>
+                    <br>
+                    <table>
+                        <tr>
+                            <td style="width: 65%;">
+                                Already have an Account ?<br>
+                                <button style="background-color: transparent; color: purple; border: none; font-family: 'Mukta', sans-serif;font-size: 17px;" onclick="openLoginModal()">Log in ></button>
+                            </td>
+                            <td>
+                                <input type="submit" value="Sign Up" style=" width: 120px; height: 60px; background-color: #C02350; color: white;">
+                            </td>
+                        </tr>
+                    </table>
+                </form> 
+            </div>  
+            <div class="modal-subContainer2" style="background-image: url('Images/signup.jpg');">
+            <button onclick="closeSuModal()" class="modalCloseButton">X</button>
+            </div>
+        </div>
+        <!--Sign in Modal-->
+        <div id="signin-modal">
+            <div class="modal-subContainer1" style="background-color: #FEE7BD;">
+                <div class="title-text" style="margin-top: 15px;">Welcome Back</div>
+                <form method="post" action="shop.html" target="_self" class="signup-form">
+                    <label for="email1">Email Address</label>
+                    <input type="email" id="email1" name="email_1" required="required" style="font-family: 'Mukta', sans-serif; background-color: #FEF3E0;">
+                    <label for="password1">Password</label>
+                    <input type="password" id="password1" name="password_1" required="required" minlength="8" style="background-color: #FEF3E0;">
+                    <input type="submit" value="Sign in" style="background-color: #F2A726; margin-top:25px; color: white;">
+                    <div style="margin-top: 10px;">Sign in with,</div>
+                    <button class="signin-buttons fa fa-google"></button>
+                    <button class="signin-buttons fa fa-facebook"></button> 
+                    <button class="signin-buttons fa fa-twitter"></button>
+                </form>
+            </div>
+            <div class="modal-subContainer2" style="background-image: url('Images/signin.jpg');">
+                <button onclick="closeSiModal()" class="modalCloseButton">X</button> 
+            </div>
+        </div>
+        <!-- Header Starts here -->
+        <div class="main-container">
+            <div id="topOfPage" class="header-container" style=" background-image: url(Images/guitar_playing.jpg); flex: 1 1 auto; display: flex; flex-direction: column; width: 100%; height: 491px; background-size: cover; background-attachment: fixed; background-repeat: no-repeat; text-align: center; background-color: #000;">
+                <!-- Navigation Bar -->
+                <nav>  
+                    <span class="logo-text" style="font-size: 40px; float: left; margin: 5px 3vw 0 3vw;">Music Overflow</span>
+                    <ul>  
+                        <li><a href="index.html" target="_self" class="anchor_dec">Home</a></li>
+                        <li>Store
+                            <ul class="subnav">
+                                <li><a href="#Albums" class="anchor_dec">Albums</a></li>
+                                <li><a href="#Instruments" class="anchor_dec">Instruments</a></li>
+                            </ul> 
+                        </li>
+                        <li><a href="queryForm.html" target="_self" class="anchor_dec">Queries</a></li>
+                        <li><a href="Quiz.html" target="_self" class="anchor_dec">Quiz</a></li>
+                        <li><a href="svg.html" target="_self" class="anchor_dec">Sitemap</a></li>
+                        <li><a href="thumbnail.html" target="_self" class="anchor_dec">Thumbnails</a></li>
+                        <li><a href="AboutUs.html" target="_self" class="anchor_dec">About Us</a></li>
+                    </ul>
+                    <button id="cart-icon" class="fa fa-shopping-cart navButtons" style="margin: -3px 5% auto 30px; cursor: pointer;"><span></span></button> 
+                    <button class="navButtons" style="border-radius: 30px;font-size: 17px; padding: 5px 15px; font-family: 'Mukta', sans-serif; margin-top: -5px; cursor: pointer;" onclick="onJoinclick()"><span>Join Us Now</span></button>
+                    <h2 class="section-title"> Overflowing Store </h2>
+                    <p style="color:#ffffffa1;" class="description"><b>For your entertainment and creativity.</b></p>
+                </nav>
+                <!-- Cart -->
+                <div class="cart">
+                    <h2 class="cart-title">Your Cart</h2>
+                    <!-- content -->
+                    <div class="cart-content">
+
+                    </div>
+                    <!-- Total -->
+                    <div class="total">
+                        <div class="total-title">Total</div>
+                        <div class="total-price">$0</div>
+                    </div>
+                    <!-- Buy button -->
+                    <button type="button" class="btn-buy" id="card" onclick="addtoInvoice()">Place Oder</button>
+
+                    <div class="container">
+
+
+                        <div class="card-container">
+                    
+                            <div class="front">
+                                <div class="image">
+                                </div>
+                                <div class="logo">Music Overflow</div><br><br>
+                                <div  class="card-number-box" style="position: absolute;">################</div><br><br><br>
+                                <div class="flexbox">
+                                    <div class="box">
+                                        <span>CARD HOLDER</span>
+                                        <div class="card-holder-name">(full name)</div>
+                                    </div>
+                                    <div class="box">
+                                        <span>EXPIRES</span>
+                                        <div class="expiration">
+                                            <span class="exp-month">MM</span>
+                                            <span class="exp-year">YY</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="back">
+                                <div class="stripe"></div>
+                                <div class="box">
+                                    <span>cvv</span>
+                                    <div class="cvv-box"></div>
+                                </div>
+                            </div>
+                    
+                        </div>
+                    
+                        <form action="shop.html" target="_self" method="get">
+                            <div class="inputBox">
+                                <span>Card Number</span>
+                                <input type="text" maxlength="16" class="card-number-input" id="c-number" placeholder="################" style="font-size: 1.1rem;">
+                            </div>
+                            <i class='bx bx-x' id="close-card" style="left: 90%; top: 18%;"></i>
+                    
+                            <div class="inputBox">
+                                <span>Card Holder</span>
+                                <input type="text" class="card-holder-input" id="c-holder" style="font-size: 1.1rem;">
+                            </div>
+                    
+                            <div class="inputBox">
+                                <span>Email Address</span>
+                                <input name="email" type="text" class="card-holder-input" style="font-size: 1.1rem;">
+                            </div>
+                    
+                            <div class="flexbox">
+                                <div class="inputBox">
+                                    <span>Expiration MM</span>
+                                    <select name="option" class="month-input" style="font-size: 1.1rem;">
+                                        <option value="month" selected disabled>month</option>
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                        <option value="06">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                </div>
+                                <div class="inputBox">
+                                    <span>Expiration YY</span>
+                                    <select name="option" class="year-input" style="font-size: 1.1rem;">
+                                        <option value="year" selected disabled>year</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2026">2026</option>
+                                        <option value="2027">2027</option>
+                                        <option value="2028">2028</option>
+                                        <option value="2029">2029</option>
+                                        <option value="2030">2030</option>
+                                    </select>
+                                </div>
+                                <div class="inputBox">
+                                    <span>CVV</span>
+                                    <input type="text" maxlength="4" class="cvv-input" id="cvv" style="font-size: 1.1rem;">
+                                </div>
+                            </div>
+                            
+                            <input type="submit" value="Buy Now" class="submit-btn" id="close" onclick="return checkforblank()">
+                            
+                        </form>
+                    </div> 
+
+                    <!-- Cart Close -->
+                    <i class='bx bx-x' id="close-cart"></i>
+                </div>
+            </div>
+
+
+            <!-- Article starts here -->
+            <div class="article-container" style="width:100%; background-color: #f08080; height: 700px;">
+                <section id="Albums" class="shop-container">    <!--section 1 -->            
+                    <h2 class="content-title"> Albums</h2>
+                    
+                
+                    <!-- content -->
+                <div class="shop-content">
+                    <!-- Box 1 -->
+                    <div class="product-box">
+                        <img src="Images/equals.jpeg" class="product-img" alt="shop item">
+                        <h2 class="product-title">Equals - Ed Sheeran</h2>
+                        <span class="price">$55.00</span>
+                        <i class='bx bx-shopping-bag add-cart' ></i>
+                    </div>
+                    
+                    <!-- Box 2 -->
+                    <div class="product-box">
+                        <img src="Images/thank.jpg" class="product-img" alt="shop item">
+                        <h2 class="product-title" style="font-size: 1.1rem;">Thank U Next - Ariana Grande</h2>
+                        <span class="price">$62.00</span>
+                        <i class='bx bx-shopping-bag add-cart' ></i>
+                    </div>
+                    
+                    <!-- Box 3 -->
+                    <div class="product-box">
+                        <img src="Images/happiness.webp" class="product-img" alt="shop item">
+                        <h2 class="product-title" style="font-size: 1.1rem;">Happines begin-Jonas Brothers</h2>
+                        <span class="price">$64.00</span>
+                        <i class='bx bx-shopping-bag add-cart' ></i>
+                    </div>
+            
+                    <!-- Box 4 -->
+                    <div class="product-box">
+                        <img src="Images/jordi.jpg" class="product-img" alt="shop item">
+                        <h2 class="product-title">Jordi - Maroon 5</h2>
+                        <span class="price">$55.00</span>
+                        <i class='bx bx-shopping-bag add-cart' ></i>
+                    </div>
+            
+                    <!-- Box 5 -->
+                    <div class="product-box">
+                        <img src="Images/nobody.jpg" class="product-img" alt="shop item">
+                        <h2 class="product-title">Nobody is listening - Zayn</h2>
+                        <span class="price">$53.00</span>
+                        <i class='bx bx-shopping-bag add-cart' ></i>
+                    </div>
+                </section>
+                </div>
+
+            
+                <section id="Instruments" class="shop-container">   <!--section 2 -->
+                    <h2 class="content-title"> Instruments </h2>
+                    
+                <!-- content -->
+                <div class="shop-content">
+            
+                    <!-- Box 6 -->
+                    <div class="product-box">
+                        <img src="Images/piano.jpg" class="product-img" alt="shop item">
+                        <div class="image__overlay">
+                            <p class="image__description">
+                                Crafted for the world’s biggest stages. Pure sound flows effortlessly from artist to piano to audience, filling the world’s most prestigious concert halls.
+                            </p>
+                        </div>
+                        <h2 class="product-title">Yamaha - CFX</h2><br><br><br>
+                        <span class="price">$55000.00</span>
+                        <i class='bx bx-shopping-bag add-cart' ></i>
+                    </div>
+            
+                    <!-- Box 7 -->
+                    <div class="product-box">
+                        <img src="Images/violin.jpg" class="product-img" alt="shop item">
+                        <div class="image__overlay">
+                            <p class="image__description">
+                                Designed to meet the needs of the professional and high class amateur performer wanting amplified violin sound for all sorts of music.
+                            </p>
+                        </div>
+                        <h2 class="product-title">Yamaha - SV-250 4 String Electric Violin</h2><br><br>
+                        <span class="price">$1800.00</span>
+                        <i class='bx bx-shopping-bag add-cart' ></i>
+                    </div>
+            
+                    <!-- Box 8 -->
+                    <div class="product-box">
+                        <img src="Images/guitar_shop.jpg" class="product-img" alt="shop item">
+                        <div class="image__overlay">
+                            <p class="image__description">
+                                Draws from more than sixty years of innovation, inspiration and evolution to meet the demands of today’s working player.
+                            </p>
+                        </div>
+                        <h2 class="product-title" style="font-size: 1.1rem;">Fender - AMERICAN PROFESSIONAL II STRATOCASTER® LEFT-HAND</h2><br>
+                        <span class="price">$1500.00</span>
+                        <i class='bx bx-shopping-bag add-cart' ></i>
+                    </div>
+            
+                    <!-- Box 9 -->
+                    <div class="product-box">
+                        <img src="Images/drums.jpg" class="product-img" alt="shop item">
+                        <div class="image__overlay">
+                            <p class="image__description">
+                                Original proffesional drum series returns In a limited annivesary edition kit.
+                            </p>
+                        </div>
+                        <h2 class="product-title">Pearl - PRESIDENT SERIES PHENOLIC</h2><br><br>
+                        <span class="price">$5000.00</span>
+                        <i class='bx bx-shopping-bag add-cart' ></i>
+                    </div>
+            
+                    <!-- Box 10 -->
+                    <div class="product-box">
+                        <img src="Images/Saxo.jpg" class="product-img" alt="shop item">
+                        <div class="image__overlay">
+                            <p class="image__description">
+                                Embodies and celebrates the creative and festive spirit of Paris in the 20s.
+                            </p>
+                        </div>
+                        <h2 class="product-title">Henri Selmer Paris - ALTO SUPREME "MODEL 2022"</h2><br><br>
+                        <span class="price">$13000.00</span>
+                        <i class='bx bx-shopping-bag add-cart' ></i>
+                    </div>
+                </div>
+                </section>
+        </div>        
+                <!-- link to JS -->
+                <script src="js_shop.js"></script>
+
+            <!-- Footer Starts Here -->
+            <div class="footer-container">
+                <div class="foot1" style="background-color: white;">
+                    <div class="footer1-sub">
+                        <div class="logo-text">Music Overflow</div>
+                        <div class="title-text" style="color: white; text-align: center; font-weight: 400;">Join us Today and get amazing deals</div>
+                        <button class="button-common" onclick="onJoinclick()">Sign Up Now</button>
+                    </div>    
+                </div>
+                <div class="foot2">
+                    <div class="footerBar" style="margin-top: 150px;">
+                        <a href="https://www.facebook.com/" class="anchor_dec fa fa-facebook fa-lg socialIcons" style="background-color: #1E8DF8; color: white;" target="_blank"></a>
+                        <a href="https://www.instagram.com/" class="anchor_dec fa fa-instagram fa-lg socialIcons" style="background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); color: white;" target="_blank"></a>
+                        <a href="https://twitter.com/?lang=en" class="anchor_dec fa fa-twitter fa-lg socialIcons"  style="background-color: #1E8DF8; color: white;" target="_blank"></a>
+                        <a href="https://www.youtube.com/" class="anchor_dec fa fa-youtube-play fa-lg socialIcons" style="background-color: #F02828; color: white;" target="_blank"></a>
+                    </div>
+                    <div class="footerBar" style="margin-top: 0;">
+                        <a href="billboard.html" class="footer-nav" target="_blank">Billboards #10</a>
+                        <a href="classicalHits.html" class="footer-nav" target="_blank">Classical Hits</a>
+                        <a href="instruments.html" class="footer-nav" target="_blank">Latest Instruments</a>
+                        <a href="Accessories.html" class="footer-nav" target="_blank">Music Accessories</a>
+                        <a href="pageEditor_megha.html" class="footer-nav" target="_blank">Editor Page</a>
+                        <a href="svg.html" class="footer-nav" target="_blank">Sitemap</a>
+                    </div>
+                    <br><br>
+                    <div class="footerBar">
+                        <small>Contact us :</small>
+                        <address>music@overflow.com</address>
+                        <br>
+                        <a href="#topOfPage" class="fa fa-arrow-up anchorArrow anchor_dec"></a>
+                        <br><br>
+                        <div class="footer-text">Copyright &copy; 2022 MusicOverflow. All rights reserved.</div>
+                    </div>       
+                </div>
+            </div>    
+
+        <script>
+            function openLoginModal() {
+                let login = document.getElementById("signup-modal");
+                login.style.display = "none";
+                let login1 = document.getElementById("signin-modal");
+                login1.style.display = "flex";
+                login1.classList.add("modalOpacity");
+            }
+            function passwordVisible() {
+                let vis = document.getElementById("password");
+                if (vis.type === "password") {
+                    vis.type = "text";
+                    } else {
+                    vis.type = "password";
+                }
+            }
+            function closeSuModal() {
+                document.querySelector(".main-container").className += 'closingOpacityBg';
+                let close = document.getElementById("signup-modal");
+                close.style.display = "none";
+            }
+            function closeSiModal() {
+                document.querySelector(".main-container").className += 'closingOpacityBg';
+                let close = document.getElementById("signin-modal");
+                close.style.display = "none";
+            }
+            function onJoinclick() {
+                let join = document.getElementById("signup-modal");
+                join.style.display = "flex";
+                join.classList.add("modalOpacity");
+                document.querySelector(".main-container").classList.add('bgOpacityDrop');
+            }
+            
+            
+            var cartboxincr = document.querySelectorAll(".detail-box");
+
+        document.querySelector('.card-number-input').oninput = () =>{
+            document.querySelector('.card-number-box').innerText = document.querySelector('.card-number-input').value;
+        }
+
+        document.querySelector('.card-holder-input').oninput = () =>{
+            document.querySelector('.card-holder-name').innerText = document.querySelector('.card-holder-input').value;
+        }
+
+        document.querySelector('.month-input').oninput = () =>{
+            document.querySelector('.exp-month').innerText = document.querySelector('.month-input').value;
+        }
+
+        document.querySelector('.year-input').oninput = () =>{
+            document.querySelector('.exp-year').innerText = document.querySelector('.year-input').value;
+        }
+
+        document.querySelector('.cvv-input').onmouseenter = () =>{
+            document.querySelector('.front').style.transform = 'perspective(1000px) rotateY(-180deg)';
+            document.querySelector('.back').style.transform = 'perspective(1000px) rotateY(0deg)';
+        }
+
+        document.querySelector('.cvv-input').onmouseleave = () =>{
+            document.querySelector('.front').style.transform = 'perspective(1000px) rotateY(0deg)';
+            document.querySelector('.back').style.transform = 'perspective(1000px) rotateY(180deg)';
+        }
+
+        document.querySelector('.cvv-input').oninput = () =>{
+            document.querySelector('.cvv-box').innerText = document.querySelector('.cvv-input').value;
+        }
+
+
+
+        function checkforblank(){
+            if(document.getElementById('c-number').value == ""){
+                alert('Please enter your card number correctly');
+                document.getElementById('c-number').style.borderColor="red"
+                return false;
+            }
+
+            if (document.getElementById('c-holder').value == ""){
+                alert('Please enter your name');
+                document.getElementById('c-holder').style.borderColor="red"
+                return false;    
+            }
+
+            if(document.getElementById('cvv').value == ""){
+                alert('Please enter card\'s CVV number');
+                document.getElementById('cvv').style.borderColor="red"
+                return false;
+            }
+
+            else {
+                window.alert("Thank you for shopping with us.\nNow you will be redirected to the shop.");
+                window.open("shop.html", "_self");
+            }  
+        }
+
+        // Card Details
+        document.querySelector("#card").addEventListener("click", function(){
+            document.querySelector(".container").classList.add("active");
+        });
+
+        document.querySelector(".container #close-card").addEventListener("click", function(){
+            document.querySelector(".container").classList.remove("active");
+        });
+        </script>
+
+    </body>
+</html>
